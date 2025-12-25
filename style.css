@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+  overflow: hidden;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.content {
+  z-index: 2;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 60px;
+}
+
+.content p {
+  margin: 15px 0 30px;
+  opacity: 0.8;
+}
+
+/* 🔵 Blob Animation */
+.blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(45deg, #38bdf8, #6366f1);
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: moveBlob 12s infinite alternate ease-in-out;
+}
+
+@keyframes moveBlob {
+  0% {
+    transform: translate(-200px, -100px) scale(1);
+  }
+  50% {
+    transform: translate(200px, 100px) scale(1.2);
+  }
+  100% {
+    transform: translate(-100px, 200px) scale(0.9);
+  }
+}
+
+/* 🔗 Button */
+.info-btn {
+  position: relative;
+  display: inline-block;
+  padding: 16px 36px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.info-btn:hover {
+  transform: scale(1.08);
+}
+
+.info-btn span {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.info-btn:hover span {
+  transform: translateX(0);
+}
